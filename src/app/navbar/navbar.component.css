@@ -6,8 +6,64 @@
     padding: 1rem;
     color: var(--white);
 
+    .dropdown {
+        transition: .2s;
+        position: relative;
+        display: inline-block;
+        
+        &:hover {
+            .dropdown-content {
+                display: block;
+            }
+        }
+
+        h6 {
+            transition: all .2s;
+
+            &:hover {
+                color: var(--second3);
+                cursor: pointer;
+            }
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: -1rem;
+            background-color: var(--main);
+            min-width: 15rem;
+            transition: all .2s;
+
+            /* &:hover {
+                .dropdown-content {
+                    display: block;
+                } */
+            }
+
+            h6 {
+                color: var(--white);
+            }
+
+            ul {
+                list-style: none;
+                padding: 1rem;
+
+                li {
+                    a {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+    }
+
     img {
         width: 2rem;
         height: 2rem;
+        transition: all .2s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
     }
 }
