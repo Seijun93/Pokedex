@@ -18,6 +18,7 @@
         }
 
         h6 {
+            color: var(--white);
             transition: all .2s;
 
             &:hover {
@@ -32,38 +33,29 @@
             background-color: var(--main);
             min-width: 15rem;
             transition: all .2s;
+        }
 
-            /* &:hover {
-                .dropdown-content {
-                    display: block;
-                } */
-            }
+        ul {
+            list-style: none;
+            padding: 1rem;
 
-            h6 {
-                color: var(--white);
-            }
-
-            ul {
-                list-style: none;
-                padding: 1rem;
-
-                li {
-                    a {
-                        text-decoration: none;
-                    }
+            li {
+                padding: 0.5rem;
+                a {
+                    text-decoration: none;
                 }
             }
         }
-
     }
 
-    img {
-        width: 2rem;
-        height: 2rem;
-        transition: all .2s;
+}
 
-        &:hover {
-            transform: scale(1.2);
-        }
+img {
+    width: 2rem;
+    height: 2rem;
+    transition: all .2s;
+
+    &:hover {
+        transform: scale(1.2);
     }
 }
