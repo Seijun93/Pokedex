@@ -1,1 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("./assets/fonts/Inter.ttf") format("truetype");
+}
+
+/* Colors */
+
+:root {
+    --black: #230C0F;
+    --white: #F5F3F4;
+    --error: #CF0C27;
+    --main: #AC2F40;
+    --second1: #DCD2C8;
+    --second2: #CDC1B8;
+    --second3: #494545;
+    --accent: #7E6162;
+    --realwhite: #fafafa;
+}
+
+/* Typescale */
+
+h1 {
+    font-size: calc(5.61rem);
+}
+
+h2 {
+    font-size: calc(4.209rem);
+}
+
+h3 {
+    font-size: calc(3.157rem);
+}
+
+h4 {
+    font-size: calc(2.369rem);
+}
+
+h5 {
+    font-size: calc(1.777rem);
+}
+
+h6 {
+    font-size: calc(1.333rem);
+}
+
+p {
+    font-size: calc(1rem);
+}
+
+small {
+    font-size: calc(0.75rem);
+}
