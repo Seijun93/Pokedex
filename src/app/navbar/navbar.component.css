@@ -6,6 +6,12 @@
     padding: 1rem;
     color: var(--white);
 
+    .title-container {
+        h6 {
+            font-weight: 700;
+        }
+    }
+
     .dropdown {
         transition: .2s;
         position: relative;
