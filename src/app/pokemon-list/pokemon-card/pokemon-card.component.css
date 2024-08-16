@@ -12,6 +12,12 @@
         32px 42px 31px 0 rgba(0, 0, 0, 0.08), 
         56px 74px 37px 0 rgba(0, 0, 0, 0.02), 
         88px 116px 41px 0 rgba(0, 0, 0, 0);
+    transition: all .2s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--main);
+    }
 
     .card-img {
         width: 12rem;
@@ -35,5 +41,4 @@
         gap: 0.25rem;
         padding-bottom: 2rem;
     }
-
 }

@@ -4,9 +4,11 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: scroll;
 
     .card-container {
-        padding: 2rem;
+        padding: 4rem 4rem;
         display: flex;
         flex-wrap: wrap;
         gap: 4rem;

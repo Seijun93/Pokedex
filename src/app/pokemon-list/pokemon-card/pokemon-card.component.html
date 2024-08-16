@@ -1,9 +1,16 @@
 <div class="card">
-    <div class="card-img">
-        <img src="../../../assets/images/Bisasam.png" alt="Ein Bild von Bisasam">
-    </div>
-    <div class="card-desc">
-        <p>001</p>
-        <p>Bulbasaur</p>
-    </div>
+    @if(pokemon.details) {
+        <div class="card-img">
+            <img [src]="this.img" alt="A picture of {{ this.name }}">
+        </div>
+        <div class="card-desc">
+            <p>{{ this.id }}</p>
+            <p>{{ this.name }}</p>
+        </div>
+    }
+    @if(!pokemon.details) {
+        <div>
+            <p>loading</p>
+        </div>
+    }
 </div>

@@ -1,24 +1,11 @@
 <div class="main-container">
     <div class="card-container">
-        <app-pokemon-card/>
-        <app-pokemon-card/>
-        <app-pokemon-card/>
-        <app-pokemon-card/>
-        <app-pokemon-card/>
-        <app-pokemon-card/>
-        <app-pokemon-card/>
-        <app-pokemon-card/>
-        <app-pokemon-card/>
-        <app-pokemon-card/>
-        <app-pokemon-card/>
-        <app-pokemon-card/>
-        <app-pokemon-card/>
-        <app-pokemon-card/>
-        <app-pokemon-card/>
-        <app-pokemon-card/>
-        <app-pokemon-card/>
+        @for (pokemon of pokemons; track pokemon.id) {
+            <app-pokemon-card [pokemon]="pokemon"/>
+        }
     </div>
     <div class="detail-container">
 
     </div>
+
 </div>
