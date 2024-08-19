@@ -7,14 +7,14 @@ import { Observable, catchError, forkJoin, map } from 'rxjs';
 })
 export class PokemonService {
 
-  private apiUrl = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0'
+  private apiUrl = 'https://pokeapi.co/api/v2/pokemon?limit='
 
   constructor(private httpClient: HttpClient) {
     
   }  
 
-  fetchPokemon (): Observable<any> {
-    return this.httpClient.get(this.apiUrl).pipe(
+  fetchPokemon (start: string, end: string): Observable<any> {
+    return this.httpClient.get(this.apiUrl + end + "&offset=" + start).pipe(
       catchError((error) => {
         console.error("Fehler beim Ausführen der Pokémon-Liste:", error);
         throw error;

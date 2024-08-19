@@ -1,0 +1,81 @@
+.pokemon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main);
+    height: 85vh;
+    width: 25vw;
+    border-radius: 1.25rem 0 0 1.25rem;
+    padding: 4rem 6rem;
+    gap: 2rem;
+    box-shadow: 
+        -8px -4px 20px 0 rgba(0, 0, 0, 0.1),
+        -33px -16px 36px 0 rgba(0, 0, 0, 0.09),
+        -74px -36px 49px 0 rgba(0, 0, 0, 0.05),
+        -131px -64px 58px 0 rgba(0, 0, 0, 0.01),
+        -204px -100px 64px 0 rgba(0, 0, 0, 0);
+
+    .img-container {
+        background-color: var(--white);
+        height: 40%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1.25rem;
+        overflow: hidden;
+
+        img {
+            width: 50%;
+            filter: drop-shadow(7px 2px 4px rgba(0, 0, 0, 0.3));
+        }
+    }
+    
+    .detail-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 50%;
+        width: 100%;
+
+        h5 {
+            text-align: center;
+        }
+
+        .general-informations {
+            margin-top: 1rem;
+            padding: 1rem;
+
+            table {
+                border-spacing: 0.75rem;
+
+            }
+        }
+
+        .attacks {
+            margin-top: 1rem;
+            padding: 1rem 1rem;
+
+            table {
+                width: 100%;
+            }
+            
+            .table {
+                height: 20vh;
+                overflow-y: scroll;
+
+
+                th {
+                    text-align: left;
+                    width: 50%;
+                }
+
+                td {
+                    text-align: left;
+                    width: 50%;
+                }
+            }
+        }
+    }
+}

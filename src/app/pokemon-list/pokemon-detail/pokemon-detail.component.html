@@ -1,0 +1,47 @@
+<div class="pokemon-container">
+    @if (pokemon) {
+        <div class="img-container">
+            <img [src]="this.img" alt="A picture of {{ this.name }}">
+        </div>
+        <div class="detail-container">
+            <h5>{{ this.id }} {{ this.name }}</h5>
+            <fieldset class="general-informations">
+                <legend>General Informations:</legend>
+                <table>
+                    <tr>
+                        <td>Main type: </td>
+                        <td>{{ this.types[0].type.name }}</td>
+                        <td>Height: </td>
+                        <td>{{ this.height }}</td>
+                    </tr>
+                    <tr>
+                        <td>Secundary type: </td>
+                        <td>{{ this.types[1].type.name }}</td>
+                        <td>Weight: </td>
+                        <td>{{ this.weight }}</td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset class="attacks">
+                <legend>Attacks:</legend>
+                <table>
+                    <div class="table">
+                        <tr>
+                            <th>Attackname</th>
+                            <th>Learned at level</th>
+                        </tr>
+                        @for (move of moves; track moves.move) {
+                            <tr>
+                                <td>{{ move.move.name }}</td>
+                                <td>{{ move.version_group_details[0].level_learned_at }}</td>
+                            </tr>
+                        }
+                    </div>
+                </table>
+            </fieldset>
+        </div>
+    }
+    @if (!pokemon) {
+        <p>loading</p>
+    }
+</div>

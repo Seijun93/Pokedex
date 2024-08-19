@@ -21,8 +21,4 @@ export class PokemonCardComponent {
     this.img = this.pokemon.details.sprites.front_default;
   }
 
-  test(){
-    console.log(this.pokemon.details)
-  }
-
 }

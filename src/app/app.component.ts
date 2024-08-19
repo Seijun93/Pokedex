@@ -22,15 +22,6 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit () {
-    // this.pokemonSubscription = this.pokemonService.fetchPokemon().subscribe(resData => {
-    //   this.pokemonService.pokemonListAll = resData;
-    //   this.pokemonService.sortPokemon(resData);
-    // });
-  }
 
-  ngOnDestroy () {
-    // if (this.pokemonSubscription) {
-    //   this.pokemonSubscription.unsubscribe();
-    // }
   }
 }
