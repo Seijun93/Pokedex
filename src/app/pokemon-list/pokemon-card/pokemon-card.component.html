@@ -1,4 +1,4 @@
-<button class="card">
+<button class="card" (click)="onSelectPokemon()">
     @if(pokemon.details) {
         <div class="card-img">
             <img [src]="this.img" alt="A picture of {{ this.name }}">

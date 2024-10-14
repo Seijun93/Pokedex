@@ -8,7 +8,7 @@ export const routes: Routes = [
         component: HomeComponent,
     },
     {
-        path: 'pokemon-list',
+        path: 'pokemon-list/:start/:end',
         component: PokemonListComponent,
     },
 ];

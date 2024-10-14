@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, input, OnChanges, SimpleChanges } from '@angular/core';
 
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { PokemonService } from './pokemon.service';
@@ -11,20 +11,32 @@ import { PokemonDetailComponent } from "./pokemon-detail/pokemon-detail.componen
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.css'
 })
-export class PokemonListComponent implements OnInit{
+export class PokemonListComponent implements OnInit, OnChanges{
 
   pokemons: any[] = [];
   selectedPokemon: any;
   isLoading: boolean = true;
   errorMessage: string = '';
-  start: string = '0';
-  end: string = '151';
+  @Input() start!: string;
+  @Input() end!: string;
 
   constructor (private pokemonService: PokemonService) {
     
   }
 
   ngOnInit() {
+    this.loadPokemonData();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['start'] || changes['end']) {
+      this.pokemons = [];
+      this.loadPokemonData();
+    }
+  }
+
+  loadPokemonData() {
+    this.isLoading = true;
     this.pokemonService.fetchPokemon(this.start, this.end).subscribe({
       next: (pokemonArray) => {
         this.pokemonService.combinePokemonInformations(pokemonArray.results).subscribe({
@@ -47,6 +59,11 @@ export class PokemonListComponent implements OnInit{
         this.isLoading = false;
       }
     })
+  }
+
+  onSelectPokemon (id: any) {
+    const index = +id - 1;
+    this.selectedPokemon = this.pokemons[index];
   }
 
 }

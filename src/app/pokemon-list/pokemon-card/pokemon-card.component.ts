@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -10,6 +10,7 @@ import { Component, Input } from '@angular/core';
 export class PokemonCardComponent {
 
   @Input() pokemon: any;
+  @Output() select = new EventEmitter();
 
   id: string = "";
   name: string = "";
@@ -19,6 +20,10 @@ export class PokemonCardComponent {
     this.id = this.pokemon.details.id;
     this.name = this.pokemon.name.charAt(0).toUpperCase() + this.pokemon.name.slice(1);
     this.img = this.pokemon.details.sprites.front_default;
+  }
+
+  onSelectPokemon() {
+    this.select.emit(this.id);
   }
 
 }

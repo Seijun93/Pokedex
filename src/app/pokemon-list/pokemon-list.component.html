@@ -1,7 +1,7 @@
 <div class="main-container">
         <div class="card-container">
             @for (pokemon of pokemons; track pokemon.id) {
-                <app-pokemon-card [pokemon]="pokemon"/>
+                <app-pokemon-card [pokemon]="pokemon" (select)="onSelectPokemon($event)"/>
             }
         </div>
         <div class="detail-container">
